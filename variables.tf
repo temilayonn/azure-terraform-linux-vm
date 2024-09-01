@@ -5,7 +5,6 @@ variable "subscription_id" {
 
 variable "vnet_resource_group_name" {
   type    = string
-  default = ""
 }
 
 variable "tenant_id" {
@@ -20,13 +19,12 @@ variable "client_id" {
 
 variable "client_secret" {
   type        = string
-  default     = ""
+
   description = "The client id for the service principal passed to the terraform provider"
 }
 
 variable "client_certificate_path" {
   type        = string
-  default     = ""
   description = "The client cert path for the service principal passed to the terraform provider"
 }
 
