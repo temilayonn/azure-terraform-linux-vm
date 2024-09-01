@@ -27,13 +27,13 @@ resource "azurerm_virtual_machine" "linux_vm" {
     # custom_data    = filebase64("${path.module}/cloud-init.txt")
   }
 
-  # os_profile_linux_config {
-  #   disable_password_authentication = true
-  #   ssh_keys {
-  #     path     = "/home/${var.admin_username}/.ssh/authorized_keys"
-  #     key_data = file(var.ssh_key)
-  #   }
-  # }
+  os_profile_linux_config {
+    disable_password_authentication = true
+    ssh_keys {
+      path     = "/home/${var.admin_username}/.ssh/authorized_keys"
+      key_data = file(var.ssh_key)
+    }
+  }
 
   tags = var.tags
 }
