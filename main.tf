@@ -38,7 +38,7 @@ resource "azurerm_virtual_machine" "linux_vm" {
   os_profile {
     computer_name  = "${var.name_prefix}-vm-${count.index}"
     admin_username = var.admin_username
-    custom_data    = filebase64("${path.module}/cloud-init.txt")
+    # custom_data    = filebase64("${path.module}/cloud-init.txt")
   }
 
   os_profile_linux_config {
