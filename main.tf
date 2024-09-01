@@ -52,25 +52,25 @@ resource "azurerm_virtual_machine" "linux_vm" {
   tags = var.tags
 }
 
-resource "azurerm_network_security_group" "vm_nsg" {
-  name                = "${var.name_prefix}-nsg"
-  location            = var.location
-  resource_group_name = var.resource_group_name
+# resource "azurerm_network_security_group" "vm_nsg" {
+#   name                = "${var.name_prefix}-nsg"
+#   location            = var.location
+#   resource_group_name = var.resource_group_name
 
-  security_rule {
-    name                       = "SSH"
-    priority                   = 1001
-    direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "Tcp"
-    source_port_range          = "*"
-    destination_port_range     = var.remote_port
-    source_address_prefix      = "*"
-    destination_address_prefix = "*"
-  }
+#   security_rule {
+#     name                       = "SSH"
+#     priority                   = 1001
+#     direction                  = "Inbound"
+#     access                     = "Allow"
+#     protocol                   = "Tcp"
+#     source_port_range          = "*"
+#     destination_port_range     = var.remote_port
+#     source_address_prefix      = "*"
+#     destination_address_prefix = "*"
+#   }
 
-  tags = var.tags
-}
+#   tags = var.tags
+# }
 
 resource "azurerm_network_interface_security_group_association" "vm_nic_nsg" {
   count                     = var.number_of_vms
