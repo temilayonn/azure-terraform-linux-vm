@@ -5,7 +5,7 @@ variable "subscription_id" {
 
 variable "vnet_resource_group_name" {
   type    = string
-  default = "rg-8025-network-centralus"
+  default = ""
 }
 
 variable "tenant_id" {
