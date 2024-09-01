@@ -74,6 +74,7 @@ variable "admin_username" {
 variable "ssh_key" {
   description = "Public SSH key for VM authentication"
   type        = string
+  default     = "~/.ssh/id_rsa.pub"
 }
 
 variable "vm_size" {
