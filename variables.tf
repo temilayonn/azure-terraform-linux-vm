@@ -3,6 +3,21 @@ variable "subscription_id" {
   description = "The subscription id passed to the terraform provider."
 }
 
+variable "vnet_resource_group_name" {
+  type    = string
+  default = "rg-8025-network-centralus"
+}
+
+variable "vnet_name" {
+  type    = string
+  default = "vnet-8025-01-centralus"
+}
+
+variable "subnet_name" {
+  type    = string
+  default = "Subnet-01"
+}
+
 variable "tenant_id" {
   type        = string
   description = "The tenant id for the service principal passed to the terraform provider."
