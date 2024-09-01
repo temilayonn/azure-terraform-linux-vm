@@ -1,4 +1,3 @@
-
 data "azurerm_subnet" "existing_subnet" {
   count               = var.number_of_vms
   name                = var.subnet_name

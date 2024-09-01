@@ -43,6 +43,7 @@ variable "number_of_vms" {
 variable "resource_group_name" {
   description = "Name of the resource group"
   type        = string
+  default = "rg-8025-vm-test"
 }
 
 variable "location" {
