@@ -12,21 +12,11 @@ variable "tenant_id" {
   description = "The tenant id for the service principal passed to the terraform provider."
 }
 
-# variable "client_id" {
-#   type        = string
-#   description = "The client id for the service principal passed to the terraform provider"
-# }
-
-# variable "client_secret" {
-#   type        = string
-
-#   description = "The client id for the service principal passed to the terraform provider"
-# }
-
-# variable "client_certificate_path" {
-#   type        = string
-#   description = "The client cert path for the service principal passed to the terraform provider"
-# }
+variable "boot_diagnostics" {
+  description = "Enable or disable boot diagnostics"
+  type        = bool
+  default     = false
+}
 
 variable "name_prefix" {
   description = "Prefix to be used for naming resources"
