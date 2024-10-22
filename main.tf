@@ -136,7 +136,7 @@ resource "random_id" "storage_suffix" {
 resource "azurerm_storage_account" "vm_sa" {
   count = var.number_of_vms
   name                     = "vmstorageacc${random_id.storage_suffix[count.index].hex}"
-  resource_group_name      = "rg-8025-vm-test"
+  resource_group_name      = var.resource_group_name
   location                 = var.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
