@@ -109,7 +109,17 @@ variable "os_profile_admin_password" {
   description = "Specifies the password of the administrator account."
 }
 
+variable "existing_storage_account_name" {
+  description = "The name of the existing storage account for boot diagnostics."
+  type        = string
+  default     = null
+}
 
+variable "existing_storage_account_resource_group" {
+  description = "The resource group name of the existing storage account for boot diagnostics."
+  type        = string
+  default     = null
+}
 
 variable "nsg_name" {
   type        = string
