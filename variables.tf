@@ -109,10 +109,7 @@ variable "os_profile_admin_password" {
   description = "Specifies the password of the administrator account."
 }
 
-variable "public_ip_name" {
-  type        = string
-  description = "Name of the public IP"
-}
+
 
 variable "nsg_name" {
   type        = string
