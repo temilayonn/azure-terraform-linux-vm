@@ -43,16 +43,17 @@ variable "ip_configuration_name" {
   description = "Name of the IP configuration"
 }
 
-variable "vm_name" {
-  type        = string
-  description = "Name of the virtual machine"
+variable "vm_names" {
+  description = "List of Windows VM names"
+  type        = list(string)
 }
 
-variable "vm_size" {
-  type        = string
-  description = "The size of the virtual machine."
-}
 
+variable "vm_sizes" {
+  description = "Map of VM sizes by name"
+  type        = map(string)
+  default     = {}
+}
 variable "storage_image_reference_publisher" {
   type        = string
   description = "The publisher of the image used to create the virtual machine."
