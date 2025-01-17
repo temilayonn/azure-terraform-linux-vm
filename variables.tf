@@ -1,113 +1,119 @@
-variable "subscription_id" {
+variable "resource_group_name" {
   type        = string
-  description = "The subscription id passed to the terraform provider."
+  description = "Resource group name"
 }
-
-variable "vnet_resource_group_name" {
-  type    = string
-}
-
-variable "tenant_id" {
+variable "existing_storage_account_id" {
+  description = "The ID of the existing storage account to be used for boot diagnostics. Leave empty to create a new one."
   type        = string
-  description = "The tenant id for the service principal passed to the terraform provider."
+  default     = null
 }
-
 variable "boot_diagnostics" {
   description = "Enable or disable boot diagnostics"
   type        = bool
   default     = false
 }
 
-variable "name_prefix" {
-  description = "Prefix to be used for naming resources"
+variable "resource_group_location" {
   type        = string
-  default     = "linux"
+  description = "Location of the resource group."
 }
 
-variable "number_of_vms" {
-  description = "Number of Linux VMs to create"
-  type        = number
-  default     = 2
-}
-
-variable "resource_group_name" {
-  description = "Name of the resource group"
-  type        = string
-  default = "rg-8025-vm-test"
-}
-
-variable "location" {
-  description = "Azure region"
-  type        = string
-  default     = "centralus"
-}
-
-variable "vnet_subnet_id" {
-  description = "ID of the subnet where the VMs will be deployed"
-  type        = string
-}
-variable "subnet_name" {
-  description = "Name of the subnet where the VMs will be deployed"
-  type        = string
-}
 variable "vnet_name" {
-  description = "Name of the Virtual Network"
   type        = string
+  description = "Name of the virtual network"
 }
 
-variable "admin_username" {
-  description = "Admin username for the Linux VMs"
+variable "subnet_name" {
   type        = string
-  default     = "azureuser"
+  description = "Name of the subnet"
 }
 
-variable "ssh_key" {
-  description = "Public SSH key for VM authentication"
+variable "subnet_id" {
   type        = string
-  default     = "~/.ssh/id_rsa.pub"
+  description = "ID of the subnet"
+}
+
+variable "network_interface_name" {
+  type        = string
+  description = "Name of the network interface"
+}
+
+variable "ip_configuration_name" {
+  type        = string
+  description = "Name of the IP configuration"
+}
+
+variable "vm_name" {
+  type        = string
+  description = "Name of the virtual machine"
 }
 
 variable "vm_size" {
-  description = "Azure VM size"
   type        = string
-  default     = "Standard_DS1_v2"
+  description = "The size of the virtual machine."
 }
 
-variable "os_publisher" {
-  description = "The publisher of the OS image"
+variable "storage_image_reference_publisher" {
   type        = string
-  default     = "Canonical"
+  description = "The publisher of the image used to create the virtual machine."
 }
 
-variable "os_offer" {
-  description = "The offer of the OS image"
+variable "storage_image_reference_offer" {
   type        = string
-  default     = "UbuntuServer"
+  description = "Specifies the offer of the platform image or marketplace image used to create the virtual machine."
 }
 
-variable "os_sku" {
-  description = "The SKU of the OS image"
+variable "storage_image_reference_sku" {
   type        = string
-  default     = "18.04-LTS"
+  description = "Specifies the SKU of the platform image or marketplace image used to create the virtual machine."
 }
 
-variable "os_version" {
-  description = "The version of the OS image"
+variable "storage_image_reference_version" {
   type        = string
-  default     = "latest"
+  description = "Specifies the version of the platform image or marketplace image used to create the virtual machine."
 }
 
-variable "remote_port" {
-  description = "Port number for remote access"
-  type        = number
-  default     = 22
+variable "storage_os_disk_name" {
+  type        = string
+  description = "The name of the OS disk."
 }
 
-variable "tags" {
-  description = "Tags to apply to resources"
-  type        = map(string)
-  default     = {
-    Environment = "development"
-    Project     = "Terraform"
-  }
+variable "storage_os_disk_caching" {
+  type        = string
+  description = "Specifies the caching requirements for the OS disk."
+}
+
+variable "storage_os_disk_create_option" {
+  type        = string
+  description = "Specifies how the virtual machine should be created."
+}
+
+variable "storage_os_disk_managed_disk_type" {
+  type        = string
+  description = "Specifies the storage account type for the managed disk."
+}
+
+variable "os_profile_computer_name" {
+  type        = string
+  description = "Specifies the host OS name of the virtual machine."
+}
+
+variable "os_profile_admin_username" {
+  type        = string
+  description = "Specifies the name of the administrator account."
+}
+
+variable "os_profile_admin_password" {
+  type        = string
+  description = "Specifies the password of the administrator account."
+}
+
+variable "public_ip_name" {
+  type        = string
+  description = "Name of the public IP"
+}
+
+variable "nsg_name" {
+  type        = string
+  description = "Name of the network security group"
 }
