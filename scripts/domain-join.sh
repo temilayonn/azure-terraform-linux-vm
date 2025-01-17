@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Variables for domain join
-DOMAIN_NAME="hostedservices.sensiaglobal.com"
-DOMAIN_USER="svc_domain@hostedservices.sensiaglobal.com"
-DOMAIN_PASSWORD="s9gJ4LQWkx3Bq"
+DOMAIN_NAME=""
+DOMAIN_USER=""
+DOMAIN_PASSWORD=""
 
 
 # Install required packages

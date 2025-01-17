@@ -52,17 +52,17 @@ resource "azurerm_virtual_machine" "public" {
   }
 }
 
-resource "azurerm_virtual_machine_extension" "domain_join" {
-  for_each = toset(var.vm_names)
-  name     = "domain-join"
-  virtual_machine_id = azurerm_virtual_machine.public[each.key].id
-  publisher = "Microsoft.Compute"
-  type      = "CustomScript"
-  type_handler_version = "1.10"
+# resource "azurerm_virtual_machine_extension" "domain_join" {
+#   for_each = toset(var.vm_names)
+#   name     = "domain-join"
+#   virtual_machine_id = azurerm_virtual_machine.public[each.key].id
+#   publisher = "Microsoft.Compute"
+#   type      = "CustomScript"
+#   type_handler_version = "1.10"
 
-  settings = <<SETTINGS
-    {
-      "script": "./scripts/domain-join.sh"
-    }
-SETTINGS
-}
+#   settings = <<SETTINGS
+#     {
+#       "script": "./scripts/domain-join.sh"
+#     }
+# SETTINGS
+# }
